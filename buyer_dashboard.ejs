@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buyer Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= user.email %></h1>
+    <a href="/logout" class="btn">Logout</a>
+
+    <h2>Available Products</h2>
+    <% if (products.length === 0) { %>
+      <p>No products available at the moment.</p>
+    <% } else { %>
+      <ul>
+        <% products.forEach(product => { %>
+          <li>
+            <strong><%= product.name %></strong> - 
+            <%= product.category %> - 
+            ₹<%= product.price %> 
+            (Sold by: <%= product.farmerEmail %>)
+            
+            <form action="/buyer/buy/<%= product._id %>" method="POST" style="display:inline;">
+              <button type="submit" class="btn">Buy</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <a href="/buyer/purchases" class="btn">View My Purchases</a>
+  </div>
+</body>
+</html>

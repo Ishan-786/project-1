@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Purchases - FarmEasy</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>My Purchases</h1>
+    <a href="/buyer/dashboard" class="btn">Back</a>
+    <% if (purchases.length === 0) { %>
+      <p>No purchases yet.</p>
+    <% } else { %>
+      <ul>
+        <% purchases.forEach(p => { %>
+          <li><strong><%= p.name %></strong> - $<%= p.price.toFixed(2) %> from <%= p.farmerEmail %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+</body>
+</html>
