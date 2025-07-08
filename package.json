@@ -1,0 +1,15 @@
+{
+    "name": "farmeasy",
+    "version": "1.0.0",
+    "description": "FarmEasy project with farmer/buyer login and products",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "ejs": "^3.1.8",
+      "express": "^4.18.2",
+      "mongoose": "^7.3.4"
+    }
+  }
+  
